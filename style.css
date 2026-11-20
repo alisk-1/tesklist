@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem); /* tipografia responsiva */
+  line-height: 1.5;
+  color: #1f2937;
+  background: #f3f4f6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho,
+.rodape {
+  background: #ab1717;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.cabecalho h1 {
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.75rem);
+}
+
+.conteudo {
+  flex: 1; /* empurra o footer para o fim da página */
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.conteudo h2 {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  margin-bottom: 1rem;
+}
+
+.lista-tarefas {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.tarefa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tarefa-status {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* cores com contraste AA sobre o fundo */
+.status-pendente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-concluida {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.rodape {
+  font-size: 0.875rem;
+}
