@@ -79,3 +79,47 @@ body {
 .rodape {
   font-size: 0.875rem;
 }
+
+/* Formulário de nova tarefa */
+.form-tarefa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-tarefa label {
+  width: 100%;
+  font-weight: 600;
+}
+
+.form-tarefa input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem;
+  font: inherit;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.form-tarefa button {
+  padding: 0.75rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: #ab1717;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-tarefa button:hover {
+  background: #8a1212;
+}
+
+.form-tarefa input:focus,
+.form-tarefa button:focus-visible {
+  outline: 3px solid #fca5a5;
+  outline-offset: 2px;
+}
