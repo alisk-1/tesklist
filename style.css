@@ -80,46 +80,43 @@ body {
   font-size: 0.875rem;
 }
 
-/* Formulário de nova tarefa */
-.form-tarefa {
+/* Filtro por status: botões em formato de badge */
+.filtros {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-.form-tarefa label {
-  width: 100%;
-  font-weight: 600;
-}
-
-.form-tarefa input {
-  flex: 1;
-  min-width: 0;
-  padding: 0.75rem;
+.filtro {
   font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
   border: 1px solid #d1d5db;
-  border-radius: 8px;
+  border-radius: 999px;
   background: #fff;
-}
-
-.form-tarefa button {
-  padding: 0.75rem 1.25rem;
-  font: inherit;
-  font-weight: 600;
-  color: #fff;
-  background: #ab1717;
-  border: none;
-  border-radius: 8px;
+  color: #1f2937;
   cursor: pointer;
 }
 
-.form-tarefa button:hover {
-  background: #8a1212;
+.filtro:hover {
+  background: #f9fafb;
 }
 
-.form-tarefa input:focus,
-.form-tarefa button:focus-visible {
+.filtro[aria-pressed="true"] {
+  background: #ab1717;
+  border-color: #ab1717;
+  color: #fff;
+}
+
+.filtro:focus-visible {
   outline: 3px solid #fca5a5;
   outline-offset: 2px;
+}
+
+/* esconde as tarefas que não combinam com o filtro ativo (vale também para tarefas novas) */
+.lista-tarefas[data-filtro="pendente"] .tarefa:not(:has(.status-pendente)),
+.lista-tarefas[data-filtro="concluida"] .tarefa:not(:has(.status-concluida)) {
+  display: none;
 }
