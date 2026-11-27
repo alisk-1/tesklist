@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="formulario.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>Task List</h1>
+    <p>Organize suas tarefas do dia</p>
+  </header>
+
+  <main class="conteudo">
+    <form class="form-tarefa">
+      <label for="nova-tarefa">Nova tarefa</label>
+      <input type="text" id="nova-tarefa" placeholder="Ex.: Revisar o PR do colega" maxlength="100" required>
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <section aria-labelledby="titulo-tarefas">
+      <h2 id="titulo-tarefas">Minhas tarefas</h2>
+
+      <div class="filtros" role="group" aria-label="Filtrar tarefas por status">
+        <button type="button" class="filtro" data-filtro="todas" aria-pressed="true">Todas</button>
+        <button type="button" class="filtro" data-filtro="pendente" aria-pressed="false">Pendentes</button>
+        <button type="button" class="filtro" data-filtro="concluida" aria-pressed="false">Concluídas</button>
+      </div>
+
+      <ul class="lista-tarefas">
+        <li class="tarefa">
+          <span class="tarefa-titulo">Estudar gitflow</span>
+          <span class="tarefa-status status-pendente">Pendente</span>
+        </li>
+        <li class="tarefa">
+          <span class="tarefa-titulo">Montar estrutura HTML do projeto</span>
+          <span class="tarefa-status status-concluida">Concluída</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Equipe Task List — Tópicos de Computação</p>
+  </footer>
+  <script src="filtro.js"></script>
+</body>
+</html>
