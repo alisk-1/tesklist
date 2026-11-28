@@ -14,10 +14,11 @@
   </header>
 
   <main class="conteudo">
-    <form class="form-tarefa">
+    <form class="form-tarefa" novalidate>
       <label for="nova-tarefa">Nova tarefa</label>
-      <input type="text" id="nova-tarefa" placeholder="Ex.: Revisar o PR do colega" maxlength="100" required>
+      <input type="text" id="nova-tarefa" placeholder="Ex.: Revisar o PR do colega" maxlength="100" required aria-describedby="erro-tarefa">
       <button type="submit">Adicionar</button>
+      <p id="erro-tarefa" class="erro" aria-live="polite"></p>
     </form>
 
     <section aria-labelledby="titulo-tarefas">
