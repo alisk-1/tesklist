@@ -27,21 +27,17 @@ body {
   font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.75rem);
 }
 
-.cabecalho p {
-  margin-top: 0.25rem;
-}
-
 .conteudo {
   flex: 1; /* empurra o footer para o fim da página */
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem;
+  padding: 2rem 1rem;
 }
 
 .conteudo h2 {
   font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .lista-tarefas {
@@ -57,7 +53,7 @@ body {
   flex-wrap: wrap;
   gap: 0.5rem;
   background: #fff;
-  padding: 1rem 1.25rem;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -89,7 +85,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-tarefa label {
@@ -122,46 +118,10 @@ body {
   background: #8a1212;
 }
 
-.form-tarefa button:disabled {
-  cursor: progress;
-}
-
-/* Mensagem de validação e campo com erro */
-.erro {
-  width: 100%;
-  font-size: 0.875rem;
-  color: #b91c1c;
-}
-
-.form-tarefa input[aria-invalid="true"] {
-  border-color: #b91c1c;
-}
-
-/* Spinner do botão enquanto a tarefa é adicionada (usa a cor do texto do botão) */
-.form-tarefa button.carregando::before {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-right: 0.5rem;
-  vertical-align: -0.15em;
-  border: 2px solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: girar 0.7s linear infinite;
-}
-
-@keyframes girar {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* quem pede menos movimento no sistema vê o spinner girando devagar */
-@media (prefers-reduced-motion: reduce) {
-  .form-tarefa button.carregando::before {
-    animation-duration: 2.5s;
-  }
+.form-tarefa input:focus,
+.form-tarefa button:focus-visible {
+  outline: 3px solid #fca5a5;
+  outline-offset: 2px;
 }
 
 /* Filtro por status: botões em formato de badge */
@@ -169,7 +129,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .filtro {
@@ -194,9 +154,6 @@ body {
   color: #fff;
 }
 
-/* Foco visível: uma regra só para o formulário e o filtro */
-.form-tarefa input:focus,
-.form-tarefa button:focus-visible,
 .filtro:focus-visible {
   outline: 3px solid #fca5a5;
   outline-offset: 2px;
